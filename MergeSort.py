@@ -18,14 +18,16 @@ arr_clr =[(0, 204, 102)]*151
 clr_ind = 0
 clr =[(0, 204, 102), (255, 0, 0),
 (0, 0, 153), (255, 102, 0)]
-fnt = pygame.font.SysFont("comicsans", 30)
-fnt1 = pygame.font.SysFont("comicsans", 20)
+fnt = pygame.font.SysFont("Helvetica", 30)
+fnt1 = pygame.font.SysFont("Helvetica", 20)
 # Generate new Array
 def generate_arr():
 	for i in range(1, 151):
 		arr_clr[i]= clr[0]
 		array[i]= random.randrange(1, 100)
+
 generate_arr()
+
 def refill():
 	screen.fill((255, 255, 255))
 	draw()
@@ -90,7 +92,7 @@ def draw():
 	screen.blit(txt, (20, 20))
 	txt1 = fnt.render("PRESS 'R' FOR NEW ARRAY.",
 					1, (0, 0, 0))
-	screen.blit(txt1, (20, 40))
+	screen.blit(txt1, (20, 50))
 	txt2 = fnt1.render("ALGORITHM USED: "\
 					"MERGE SORT", 1, (0, 0, 0))
 	screen.blit(txt2, (600, 60))

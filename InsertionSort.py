@@ -6,22 +6,22 @@ pygame.font.init()
 startTime = time.time()
 n = 151
 screen = pygame.display.set_mode(
-    (1024, 768)
+    (900, 650)
 )
 
 pygame.display.set_caption("SORTING VISUALISER")
 
 run = True
 
-width = 1024
-length = 768
+width = 900
+length = 600
 array = [0] * n
 arr_clr = [(0, 204, 102)] * n
 clr_ind = 0
 clr = [(0, 204, 102), (255, 0, 0), \
-       (0, 0, 153), (255, 102, 0)]
-fnt = pygame.font.SysFont("comicsans", 30)
-fnt1 = pygame.font.SysFont("comicsans", 20)
+        (0, 0, 153), (255, 102, 0)]
+fnt = pygame.font.SysFont("Helvetica", 30)
+fnt1 = pygame.font.SysFont("Helvetica", 20)
 
 def generate_arr():
     for i in range(1, n):
@@ -34,7 +34,7 @@ def refill():
     screen.fill((255, 255, 255))
     draw()
     pygame.display.update()
-    pygame.time.delay(10)
+    pygame.time.delay(20)
 
 def insertionSort(arr):
     for i in range(1, len(arr)): #Cek dari 1 sampai panjang array
@@ -59,17 +59,17 @@ def draw():
     screen.blit(txt, (20, 20))
     txt1 = fnt.render("NEW ARRAY: PRESS 'R'", \
                       1, (0, 0, 0))
-    screen.blit(txt1, (20, 40))
+    screen.blit(txt1, (20, 50))
     txt2 = fnt1.render("ALGORITHM USED:" \
                        "INSERTION SORT", 1, (0, 0, 0))
     screen.blit(txt2, (600, 60))
-    text3 = fnt1.render("Running Time(sec): " + \
-                        str(int(time.time() - startTime)), \
-                        1, (0, 0, 0))
-    screen.blit(text3, (600, 20))
-    element_width = (width - 200) // 200
-    boundry_arr = 1024 / 200
-    boundry_grp = 728 / 150
+    # text3 = fnt1.render("Running Time(sec): " + \
+    #                     str(int(time.time() - startTime)), \
+    #                     1, (0, 0, 0))
+    # screen.blit(text3, (600, 20))
+    element_width = (width - 200) // 150
+    boundry_arr = 900 / 150
+    boundry_grp = 550 / 100
     pygame.draw.line(screen, (0, 0, 0), (0, 95), \
                      (1024, 95), 6)
 
